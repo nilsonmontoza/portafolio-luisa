@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -453,13 +453,6 @@
       <h2>¿Por qué <span>trabajar conmigo?</span></h2>
       <div id="porqueTexto"></div>
       <div class="stats-row" id="statsRow"></div>
-      <div class="tags-wrap">
-        <span class="tag">✅ Puntual y organizada</span>
-        <span class="tag">✅ Guión incluido</span>
-        <span class="tag">✅ Revisiones sin estrés</span>
-        <span class="tag">✅ Derechos de uso total</span>
-        <span class="tag">✅ Edición profesional</span>
-      </div>
     </div>
   </div>
 </section>
@@ -558,7 +551,7 @@ function buildVideoCard(v) {
 
   if (hasFile) {
     return `<div class="video-card has-video ${thumbClass(v.categoria)}" data-cat="${v.categoria}">
-      <video src="${v.archivo}" controls playsinline preload="metadata" poster="${hasThumb||''}"></video>
+      <video src="${v.archivo}" playsinline preload="metadata" poster="${hasThumb||''}"></video>
       <div class="video-inner"><div class="video-play">▶</div></div>
       <span class="video-cat-tag">${v.etiqueta}</span>
       <div class="video-label">${v.titulo}</div>
@@ -583,13 +576,34 @@ videoGrid.addEventListener('click', e => {
   if (!card) return;
   const video = card.querySelector('video');
 
-  // Pausa todos los demás videos
   document.querySelectorAll('.video-card.has-video video').forEach(v => {
     if (v !== video) { v.pause(); v.currentTime = 0; }
   });
 
   if (video.paused) { video.play(); } else { video.pause(); }
 });
+
+// Pausar si cambia de pestaña o minimiza
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    document.querySelectorAll('.video-card.has-video video').forEach(v => {
+      v.pause(); v.currentTime = 0;
+    });
+  }
+});
+
+// Pausar si sale de la sección de videos
+const videoSection = document.getElementById('videos');
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      document.querySelectorAll('.video-card.has-video video').forEach(v => {
+        v.pause(); v.currentTime = 0;
+      });
+    }
+  });
+}, { threshold: 0.1 });
+sectionObserver.observe(videoSection);
 
 function filterVideos(cat, btn) {
   document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));

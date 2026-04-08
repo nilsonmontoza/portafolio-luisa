@@ -9,12 +9,12 @@ const CONFIG = {
 
   // ── INFORMACIÓN PERSONAL ──────────────────────────────────
   perfil: {
-    nombre: "Luisa Maria",
+    nombre: "Luisa María",
     apellido: "",
     rol: "UGC Creator · Community Manager",
     ciudad: "Medellín, Colombia",
     edad: "26 años",
-    bio: "Creo contenido auténtico que conecta marcas con personas reales. Especializada en belleza, cuidado capilar y lifestyle — cada video cuenta una historia que genera confianza y conversión.",
+    bio: "Creo contenido real y auténtico que conecta con personas de verdad. Me enfoco en belleza, cuidado capilar y lifestyle, mostrando las marcas de forma natural en el día a día. Busco que cada video genere confianza y resultados.",
     disponible: true, // true = muestra badge "Disponible"
     email: "londonoluisa81@gmail.com",
     instagram: "https://instagram.com/luisa_ln",
@@ -40,20 +40,20 @@ const CONFIG = {
 
   // ── TEXTO SECCIÓN "SOBRE MÍ" ──────────────────────────────
   sobreMi: [
-    "Me llamo Luisa Maria, tengo 26 años y vivo en Medellín. Me apasiona crear contenido genuino que ayuda a las marcas a conectar con personas reales. No es solo hacer videos — es contar historias que generan confianza.",
-    "Entrego contenido listo para usar en Instagram, TikTok y e-commerce, con guión, producción y edición incluidos. Trabajo con marcas de belleza, salud y lifestyle que valoran la autenticidad sobre la perfección fabricada.",
+    "Me llamo Luisa María, tengo 26 años y vivo en Medellín. Me apasiona crear contenido que se siente real y cercano. Me gusta mostrar los productos de forma natural, como en el día a día, porque sé que así es como realmente conectan con las personas.",
+    "Actualmente estoy enfocada en crear contenido para redes sociales y e-commerce, encargándome de todo el proceso: desde la idea hasta la edición final. Me interesa trabajar con marcas de belleza, cuidado capilar y lifestyle que valoren lo real sobre lo perfecto.",
   ],
 
   // ── HABILIDADES ───────────────────────────────────────────
   habilidades: [
-    { icono: "🎬", titulo: "Creación UGC",         desc: "Videos auténticos y persuasivos para marcas. Desde la idea hasta la edición final, enfocados en conversión." },
-    { icono: "📲", titulo: "Community Manager",    desc: "Gestión de redes sociales, creación de calendarios de contenido y estrategia de engagement." },
+    { icono: "🎬", titulo: "Creación UGC",         desc: "Contenido real y natural que conecta con las personas y genera confianza en la marca." },
+    { icono: "📲", titulo: "Community Manager",    desc: "Manejo de redes de forma cercana y constante, creando contenido y conexión real con la audiencia." },
     { icono: "💄", titulo: "Nicho Belleza",         desc: "Reseñas, tutoriales y demos de productos de maquillaje, skincare y cuidado personal." },
-    { icono: "💇‍♀️", titulo: "Cuidado Capilar",   desc: "Rutinas, reseñas y contenido educativo sobre tratamientos y productos para el cabello." },
-    { icono: "🌿", titulo: "Lifestyle & Vlogs",    desc: "Contenido de vida diaria, comida, bienestar y experiencias que conectan emocionalmente." },
+    { icono: "💇‍♀️", titulo: "Cuidado Capilar",   desc: "Rutinas, reseñas y contenido sobre tratamientos y productos para el cabello." },
+    { icono: "🌿", titulo: "Lifestyle & Vlogs",    desc: "Contenido de vida diaria, comida, bienestar mostrando experiencias reales de forma natural.." },
     { icono: "📸", titulo: "Fotografía de Producto", desc: "Fotos detalle y posando con producto para uso en redes, e-commerce y campañas digitales." },
   ],
-
+  
   // ── VIDEOS ────────────────────────────────────────────────
   // Pon tus videos en las carpetas: videos/belleza/ | videos/capilar/ | videos/lifestyle/
   // Para cada video puedes poner:
@@ -102,16 +102,15 @@ const CONFIG = {
     { archivo: "fotos/productos/foto-1.jpg", caption: "Posando con producto · Fullbody" },
     { archivo: "fotos/productos/foto-2.jpg", caption: "Detalle de producto · Flatlay" },
     { archivo: "fotos/productos/foto-3.jpg", caption: "Lifestyle · Capilar" },
-    { archivo: "fotos/productos/foto-4.jpg", caption: "Aplicando producto · Beauty" },
-    { archivo: "fotos/productos/foto-5.jpg", caption: "Overhead · Detalle producto" },
+    { archivo: "fotos/productos/foto-4.jpg", caption: "Aplicando producto · Beauty" }
   ],
 
   // ── SERVICIOS ─────────────────────────────────────────────
   servicios: [
-    { numero: "01", titulo: "Pack UGC Belleza",      desc: "2 videos auténticos para nicho beauty: skincare, maquillaje o fragrancias. Entrega en 5 días hábiles." },
-    { numero: "02", titulo: "Pack Cuidado Capilar",  desc: "3 videos especializados en tratamientos, rutinas y reseñas de productos capilares." },
+    { numero: "01", titulo: "Pack UGC Belleza",      desc: "2 videos auténticos para beauty: skincare, maquillaje o fragancias. Entrega en 5 días hábiles." },
+    { numero: "02", titulo: "Pack Cuidado Capilar",  desc: "3 videos sobre rutinas, tratamientos y reseñas de productos capilares." },
     { numero: "03", titulo: "Pack Lifestyle & Vlogs", desc: "3 videos de vida diaria, comida o bienestar que integran tu producto de forma natural." },
-    { numero: "04", titulo: "Pack Completo UGC",     desc: "8 videos + fotos UGC (detalle y posando). Ideal para lanzamientos de producto o campañas completas." },
+    { numero: "04", titulo: "Pack Completo UGC",     desc: "8 videos + fotos UGC (detalle y posando). Ideal para lanzamientos o campañas." },
     { numero: "05", titulo: "Community Manager",     desc: "Gestión mensual de redes: estrategia, contenido, publicación, respuesta a comunidad y reportes." },
     { numero: "06", titulo: "Foto UGC",              desc: "Set de fotos profesionales: detalle de producto, flatlay y tomas posando para e-commerce y redes." },
   ],
