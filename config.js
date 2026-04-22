@@ -109,7 +109,7 @@ const CONFIG = {
   // Pon tus fotos en: fotos/productos/
   // caption = texto que aparece al hacer hover
   fotos: [
-    { archivo: "fotos/productos/remington.jpg", caption: "REMINGTON" },
+    { archivo: "fotos/productos/remington.jpeg", caption: "REMINGTON" },
     { archivo: "fotos/productos/desmaquillante.jpeg", caption: "DESMAQUILLANTE BIFÁSICO" }
   ],
 
