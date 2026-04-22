@@ -60,6 +60,8 @@ const CONFIG = {
   //   - archivo: ruta al video local (ej: "videos/belleza/skincare.mp4")
   //   - url: link externo (TikTok, YouTube, Drive) — usa esto si no quieres subir el archivo
   //   - thumb: imagen de preview (ej: "fotos/productos/thumb-skincare.jpg") — opcional
+  // Para convertir video usa 
+  // ffmpeg -i videos/skincare/skincare.MOV -vcodec h264 -acodec aac -strict -2 videos/skincare/skincare.mp4
   videos: [
     /*{
       titulo: "Review Skincare Rutina AM",
@@ -78,31 +80,37 @@ const CONFIG = {
       thumb: "",
     },
     {
+      titulo: "Unboxing Shark ",
+      categoria: "hair",
+      etiqueta: "🌿 Unboxing",
+      archivo: "videos/capilar/unboxing.mp4",
+      url: "", 
+      thumb: "",
+    },
+    {
+      titulo: "Rutina noche Skincare",
+      categoria: "skincare",
+      etiqueta: "🌿 skincare",
+      archivo: "videos/skincare/skincare.mp4",
+      url: "", 
+      thumb: "",
+    },
+    {
       titulo: "Day in My Life · Medellín",
       categoria: "life",
       etiqueta: "🌿 Lifestyle",
       archivo: "videos/lifestyle/day-in-my-life.mp4",
       url: "",
       thumb: "",
-    },
-    {
-      titulo: "Sales ",
-      categoria: "life",
-      etiqueta: "🌿 Lifestyle",
-      //archivo: "videos/belleza/skincare-am.mp4",
-      url: "https://www.tiktok.com/@alaioslingerie_/video/7610919351390063879?is_from_webapp=1&sender_device=pc", 
-      thumb: "fotos/productos/sales.jpg",
-    },
+    }
   ],
 
   // ── FOTOS DE PRODUCTOS ────────────────────────────────────
   // Pon tus fotos en: fotos/productos/
   // caption = texto que aparece al hacer hover
   fotos: [
-    { archivo: "fotos/productos/foto-1.jpg", caption: "Posando con producto · Fullbody" },
-    { archivo: "fotos/productos/foto-2.jpg", caption: "Detalle de producto · Flatlay" },
-    { archivo: "fotos/productos/foto-3.jpg", caption: "Lifestyle · Capilar" },
-    { archivo: "fotos/productos/foto-4.jpg", caption: "Aplicando producto · Beauty" }
+    { archivo: "fotos/productos/remington.jpg", caption: "REMINGTON" },
+    { archivo: "fotos/productos/desmaquillante.jpeg", caption: "DESMAQUILLANTE BIFÁSICO" }
   ],
 
   // ── SERVICIOS ─────────────────────────────────────────────
