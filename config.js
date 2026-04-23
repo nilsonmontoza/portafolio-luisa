@@ -102,6 +102,14 @@ const CONFIG = {
       archivo: "videos/lifestyle/day-in-my-life.mp4",
       url: "",
       thumb: "",
+    },
+    {
+      titulo: "Keratin Therapy",
+      categoria: "hair",
+      etiqueta: "💇‍♀️ Capilar",
+      archivo: "videos/capilar/remington.mp4",
+      url: "",
+      thumb: "",
     }
   ],
 
