@@ -66,8 +66,9 @@ function thumbClass(cat) {
 function buildVideoCard(v) {
   const hasThumb = v.thumb;
   if (v.archivo) {
-    return `<div class="video-card has-video ${thumbClass(v.categoria)}" data-cat="${v.categoria}" data-archivo="${v.archivo}">
-      <video data-src="${v.archivo}" playsinline webkit-playsinline preload="none"${hasThumb ? ` poster="${hasThumb}"` : ''}></video>
+    const bgStyle = hasThumb ? ` style="background-image:url('${hasThumb}');background-size:cover;background-position:center"` : '';
+    return `<div class="video-card has-video ${thumbClass(v.categoria)}" data-cat="${v.categoria}" data-archivo="${v.archivo}"${bgStyle}>
+      <video data-src="${v.archivo}" playsinline webkit-playsinline preload="none" muted></video>
       <div class="video-inner"><div class="video-play-btn">▶</div></div>
       <span class="video-cat-tag">${v.etiqueta}</span>
       <div class="video-label">${v.titulo}</div>
@@ -91,15 +92,20 @@ videoGrid.addEventListener('click', e => {
   openVideoModal(card.dataset.archivo);
 });
 
-// Captura el primer frame y lo usa como poster (thumbnail sin archivo separado)
+// Captura el primer frame y lo aplica como background del card
 function capturePoster(video) {
   const canvas = document.createElement('canvas');
   canvas.width  = video.videoWidth  || 320;
   canvas.height = video.videoHeight || 568;
   canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-  video.poster = canvas.toDataURL('image/jpeg', 0.75);
+  const dataUrl = canvas.toDataURL('image/jpeg', 0.75);
   video.preload = 'none';
-  video.classList.add('ready');
+  const card = video.closest('.video-card');
+  if (card) {
+    card.style.backgroundImage = `url('${dataUrl}')`;
+    card.style.backgroundSize = 'cover';
+    card.style.backgroundPosition = 'center';
+  }
 }
 
 function loadVideo(video) {
