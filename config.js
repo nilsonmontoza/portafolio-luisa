@@ -54,13 +54,24 @@ const CONFIG = {
     { icono: "📸", titulo: "Fotografía de Producto", desc: "Fotos detalle y posando con producto para uso en redes, e-commerce y campañas digitales." },
   ],
   
+  // ── CATEGORÍAS DE VIDEO ──────────────────────────────────
+  // Define aquí tus categorías: la clave debe coincidir con el campo "categoria" de cada video.
+  // Solo aparecerá el tab si hay al menos un video con esa categoría.
+  // Para agregar un nicho nuevo: añade una línea aquí y úsala en tus videos.
+  categorias: {
+    beauty:   '💄 Belleza',
+    hair:     '💇‍♀️ Capilar',
+    skincare: '✨ Skincare',
+    life:     '🌿 Lifestyle',
+  },
+
   // ── VIDEOS ────────────────────────────────────────────────
   // Pon tus videos en las carpetas: videos/belleza/ | videos/capilar/ | videos/lifestyle/
   // Para cada video puedes poner:
   //   - archivo: ruta al video local (ej: "videos/belleza/skincare.mp4")
   //   - url: link externo (TikTok, YouTube, Drive) — usa esto si no quieres subir el archivo
   //   - thumb: imagen de preview (ej: "fotos/productos/thumb-skincare.jpg") — opcional
-  // Para convertir video usa 
+  // Para convertir video usa
   // ffmpeg -i videos/skincare/skincare.MOV -vcodec h264 -acodec aac -strict -2 videos/skincare/skincare.mp4
   videos: [
     /*{
@@ -90,7 +101,7 @@ const CONFIG = {
     {
       titulo: "Rutina noche Skincare",
       categoria: "skincare",
-      etiqueta: "🌿 skincare",
+      etiqueta: "✨ Skincare",
       archivo: "videos/skincare/skincare.mp4",
       url: "", 
       thumb: "",
