@@ -107,10 +107,10 @@ const CONFIG = {
       thumb: "",
     },
     {
-      titulo: "Day in My Life · Medellín",
+      titulo: "Day in My Life · Carmen",
       categoria: "life",
       etiqueta: "🌿 Lifestyle",
-      archivo: "videos/lifestyle/day-in-my-life.mp4",
+      archivo: "videos/lifestyle/carmen.mp4",
       url: "",
       thumb: "",
     },
@@ -128,8 +128,8 @@ const CONFIG = {
   // Pon tus fotos en: fotos/productos/
   // caption = texto que aparece al hacer hover
   fotos: [
-    { archivo: "fotos/productos/remington.jpeg", caption: "REMINGTON" },
-    { archivo: "fotos/productos/desmaquillante.jpeg", caption: "DESMAQUILLANTE BIFÁSICO" }
+    { archivo: "fotos/productos/remington.jpg", caption: "REMINGTON" },
+    { archivo: "fotos/productos/desmaquillante.jpg", caption: "DESMAQUILLANTE BIFÁSICO" }
   ],
 
   // ── SERVICIOS ─────────────────────────────────────────────
