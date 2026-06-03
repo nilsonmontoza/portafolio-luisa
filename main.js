@@ -86,8 +86,11 @@ document.querySelectorAll('.video-card.has-video').forEach(c => videoLazyObs.obs
 // ── MODAL VIDEO ───────────────────────────────────────────────
 function openVideoModal(src) {
   const video = document.getElementById('modalVideo');
+  const spinner = document.getElementById('modalSpinner');
   video.src = src;
   document.getElementById('videoModal').classList.add('open');
+  spinner.classList.add('visible');
+  video.addEventListener('canplay', () => spinner.classList.remove('visible'), { once: true });
   video.play().catch(() => {});
   document.body.style.overflow = 'hidden';
   history.pushState({ modal: 'video' }, '');
@@ -101,6 +104,7 @@ function closeVideoModal() {
   video.src = '';
   document.getElementById('videoModal').classList.remove('open');
   document.getElementById('modalProgressFill').style.width = '0%';
+  document.getElementById('modalSpinner').classList.remove('visible');
   document.body.style.overflow = '';
 }
 
@@ -153,7 +157,14 @@ function filterVideos(cat, btn) {
   document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   document.querySelectorAll('.video-card').forEach(c => {
-    c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
+    const show = cat === 'all' || c.dataset.cat === cat;
+    if (show) {
+      c.style.display = '';
+      requestAnimationFrame(() => c.classList.remove('hidden'));
+    } else {
+      c.classList.add('hidden');
+      setTimeout(() => { if (c.classList.contains('hidden')) c.style.display = 'none'; }, 300);
+    }
   });
 }
 
@@ -253,3 +264,27 @@ scrollTopBtn.addEventListener('click', () => {
 document.querySelectorAll('img.blur-up').forEach(img => {
   if (img.complete && img.naturalWidth > 0) img.classList.add('loaded');
 });
+
+// ── SCROLL SPY ────────────────────────────────────────────────
+const sections = document.querySelectorAll('section[id]');
+const navLinks  = document.querySelectorAll('.nav-links a');
+const spyObs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    navLinks.forEach(a => a.classList.remove('active'));
+    const link = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+    if (link) link.classList.add('active');
+  });
+}, { rootMargin: '-40% 0px -55% 0px' });
+sections.forEach(s => spyObs.observe(s));
+
+// ── SWIPE TO CLOSE ────────────────────────────────────────────
+function addSwipeClose(el, closeFn) {
+  let startY = 0;
+  el.addEventListener('touchstart', e => { startY = e.touches[0].clientY; }, { passive: true });
+  el.addEventListener('touchend', e => {
+    if (e.changedTouches[0].clientY - startY > 60) closeFn();
+  }, { passive: true });
+}
+addSwipeClose(document.getElementById('videoModal'), closeVideoModal);
+addSwipeClose(document.getElementById('lightbox'), closeLightbox);
