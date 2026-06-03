@@ -1,8 +1,8 @@
 /**
  * ============================================================
- *  VIDEOS DEL PORTAFOLIO — Luisa María
- *  Agrega o quita videos editando este archivo.
- *  Para convertir: ffmpeg -i video.MOV -vcodec h264 -acodec aac videos/categoria/video.mp4
+ *  CONTENIDO DEL PORTAFOLIO — Luisa María
+ *  Edita este archivo para agregar o quitar videos y fotos.
+ *  Para convertir video: ffmpeg -i video.MOV -vcodec h264 -acodec aac videos/categoria/video.mp4
  * ============================================================
  */
 
@@ -16,6 +16,13 @@ const CONFIG = {
     skincare: '✨ Skincare',
     life:     '🌿 Lifestyle',
   },
+
+  // ── FOTOS ─────────────────────────────────────────────────
+  // archivo: ruta de la imagen  |  caption: texto que aparece debajo
+  fotos: [
+    { archivo: "fotos/productos/desmaquillante.jpg", caption: "Desmaquillante" },
+    { archivo: "fotos/productos/remington.jpg",      caption: "Remington" },
+  ],
 
   // ── VIDEOS ────────────────────────────────────────────────
   // archivo: ruta local  |  url: link externo  |  thumb: imagen de preview (opcional)

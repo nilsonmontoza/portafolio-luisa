@@ -1,7 +1,7 @@
 // Auto-generado — ejecutar: node scripts/generate-manifest.js
 const PHOTOS = [
   {
-    "archivo": "fotos/productos/desmaquillante.jpeg",
+    "archivo": "fotos/productos/desmaquillante.jpg",
     "caption": "Desmaquillante"
   },
   {
@@ -9,7 +9,7 @@ const PHOTOS = [
     "caption": "Limpiador"
   },
   {
-    "archivo": "fotos/productos/remington.jpeg",
+    "archivo": "fotos/productos/remington.jpg",
     "caption": "Remington"
   }
 ];

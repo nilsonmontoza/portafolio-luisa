@@ -175,8 +175,8 @@ function photoPlaceholder(i) {
   return `<div class="photo-ph ${placeholderColors[i % 5]}"><span>foto-${i + 1}.jpg</span></div>`;
 }
 
-if (typeof PHOTOS !== 'undefined' && PHOTOS.length) {
-  document.getElementById('photoGrid').innerHTML = PHOTOS.map((f, i) => `
+if (CONFIG.fotos?.length) {
+  document.getElementById('photoGrid').innerHTML = CONFIG.fotos.map((f, i) => `
     <div class="photo-item"
         data-src="${f.archivo}"
         data-caption="${f.caption.replace(/"/g, '&quot;')}"
