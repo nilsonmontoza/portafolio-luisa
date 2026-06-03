@@ -11,13 +11,15 @@
 <meta property="og:title"       content="Luisa María – UGC Creator">
 <meta property="og:description" content="Contenido real y auténtico para marcas de belleza, cuidado capilar y lifestyle.">
 <meta property="og:image"       content="fotos/hero/principal.jpeg">
-<!-- TODO: cambiar og:image e og:url a URL absoluta al publicar con dominio propio -->
 
 <!-- Twitter Card -->
 <meta name="twitter:card"        content="summary_large_image">
 <meta name="twitter:title"       content="Luisa María – UGC Creator">
 <meta name="twitter:description" content="Contenido real y auténtico para marcas de belleza, cuidado capilar y lifestyle.">
 <meta name="twitter:image"       content="fotos/hero/principal.jpeg">
+
+<!-- Preload hero image (LCP) -->
+<link rel="preload" as="image" href="fotos/hero/principal.jpeg" fetchpriority="high">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +32,7 @@
 
 <!-- NAV -->
 <nav>
-  <span class="nav-logo" id="navLogo"></span>
+  <span class="nav-logo">Luisa María</span>
   <ul class="nav-links">
     <li><a href="#habilidades">Habilidades</a></li>
     <li><a href="#videos">Videos</a></li>
@@ -39,7 +41,10 @@
     <li><a href="#porque">Sobre mí</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
-  <div class="nav-social" id="navSocial"></div>
+  <div class="nav-social">
+    <a href="https://instagram.com/luisa_ln" target="_blank" rel="noopener noreferrer" title="Instagram">IG</a>
+    <a href="https://tiktok.com/@luisa_ln" target="_blank" rel="noopener noreferrer" title="TikTok">TK</a>
+  </div>
   <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -53,16 +58,19 @@
   <a href="#servicios">Servicios</a>
   <a href="#porque">Sobre mí</a>
   <a href="#contacto">Contacto</a>
-  <div class="mobile-menu-social" id="mobileMenuSocial"></div>
+  <div class="mobile-menu-social">
+    <a href="https://instagram.com/luisa_ln" target="_blank" rel="noopener noreferrer">IG</a>
+    <a href="https://tiktok.com/@luisa_ln" target="_blank" rel="noopener noreferrer">TK</a>
+  </div>
 </div>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
-    <p class="hero-tag" id="heroTag"></p>
-    <h1 id="heroH1"></h1>
-    <p class="hero-subtitle" id="heroSubtitle"></p>
-    <p class="hero-bio" id="heroBio"></p>
+    <p class="hero-tag">UGC Creator · Community Manager</p>
+    <h1>Hola, soy<br><em>Luisa María</em></h1>
+    <p class="hero-subtitle">Medellín, Colombia · 26 años</p>
+    <p class="hero-bio">Creo contenido real y auténtico que conecta con personas de verdad. Me enfoco en belleza, cuidado capilar y lifestyle, mostrando las marcas de forma natural en el día a día. Busco que cada video genere confianza y resultados.</p>
     <div class="btn-group">
       <a href="#videos" class="btn btn-primary">Ver mi trabajo</a>
       <a href="#contacto" class="btn btn-outline">Colaboremos</a>
@@ -74,8 +82,16 @@
       <div class="hero-bg-blob"></div>
       <div class="float-chip"><span class="chip-icon">✨</span> Beauty & Lifestyle</div>
       <div class="float-chip"><span class="chip-icon">🎬</span> UGC Creator</div>
-      <div class="hero-photo" id="heroPhoto"></div>
-      <div class="hero-badge" id="heroBadge"></div>
+      <div class="hero-photo">
+        <img src="fotos/hero/principal.jpeg" alt="Foto de Luisa María" loading="eager" fetchpriority="high" class="blur-up" onload="this.classList.add('loaded')">
+      </div>
+      <div class="hero-badge">
+        <div class="badge-dot"></div>
+        <div>
+          <div class="badge-text">Disponible</div>
+          <div class="badge-sub">para colaboraciones</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -84,7 +100,38 @@
 <section id="habilidades">
   <div class="section-label">Lo que hago</div>
   <h2>Mis <span>Habilidades</span></h2>
-  <div class="skills-grid" id="skillsGrid"></div>
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <div class="skill-icon">🎬</div>
+      <h3>Creación UGC</h3>
+      <p>Contenido real y natural que conecta con las personas y genera confianza en la marca.</p>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">📲</div>
+      <h3>Community Manager</h3>
+      <p>Manejo de redes de forma cercana y constante, creando contenido y conexión real con la audiencia.</p>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">💄</div>
+      <h3>Nicho Belleza</h3>
+      <p>Reseñas, tutoriales y demos de productos de maquillaje, skincare y cuidado personal.</p>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">💇‍♀️</div>
+      <h3>Cuidado Capilar</h3>
+      <p>Rutinas, reseñas y contenido sobre tratamientos y productos para el cabello.</p>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">🌿</div>
+      <h3>Lifestyle & Vlogs</h3>
+      <p>Contenido de vida diaria, comida, bienestar mostrando experiencias reales de forma natural.</p>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">📸</div>
+      <h3>Fotografía de Producto</h3>
+      <p>Fotos detalle y posando con producto para uso en redes, e-commerce y campañas digitales.</p>
+    </div>
+  </div>
 </section>
 
 <!-- VIDEOS -->
@@ -106,7 +153,38 @@
 <section id="servicios">
   <div class="section-label">Qué ofrezco</div>
   <h2>Mis <span>Servicios</span></h2>
-  <div class="services-grid" id="servicesGrid"></div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-number">01</div>
+      <h3>Pack UGC Belleza</h3>
+      <p>2 videos auténticos para beauty: skincare, maquillaje o fragancias. Entrega en 5 días hábiles.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-number">02</div>
+      <h3>Pack Cuidado Capilar</h3>
+      <p>3 videos sobre rutinas, tratamientos y reseñas de productos capilares.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-number">03</div>
+      <h3>Pack Lifestyle & Vlogs</h3>
+      <p>3 videos de vida diaria, comida o bienestar que integran tu producto de forma natural.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-number">04</div>
+      <h3>Pack Completo UGC</h3>
+      <p>8 videos + fotos UGC (detalle y posando). Ideal para lanzamientos o campañas.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-number">05</div>
+      <h3>Community Manager</h3>
+      <p>Gestión mensual de redes: estrategia, contenido, publicación, respuesta a comunidad y reportes.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-number">06</div>
+      <h3>Foto UGC</h3>
+      <p>Set de fotos profesionales: detalle de producto, flatlay y tomas posando para e-commerce y redes.</p>
+    </div>
+  </div>
 </section>
 
 <!-- POR QUÉ YO -->
@@ -114,26 +192,45 @@
   <div class="section-label">Mi historia</div>
   <div class="porque-inner">
     <div class="porque-photo">
-      <div class="porque-ph" id="porquePh"></div>
+      <div class="porque-ph">
+        <img src="fotos/porque/sobre-mi.jpeg" alt="Luisa María" loading="lazy" class="blur-up" onload="this.classList.add('loaded')">
+      </div>
       <div class="porque-deco"></div>
     </div>
     <div>
       <h2>¿Por qué <span>trabajar conmigo?</span></h2>
-      <div id="porqueTexto"></div>
-      <div class="stats-row" id="statsRow"></div>
+      <p style="font-size:.93rem;line-height:1.8;color:var(--caramel);font-weight:300;margin-bottom:16px">Me llamo Luisa María, tengo 26 años y vivo en Medellín. Me apasiona crear contenido que se siente real y cercano. Me gusta mostrar los productos de forma natural, como en el día a día, porque sé que así es como realmente conectan con las personas.</p>
+      <p style="font-size:.93rem;line-height:1.8;color:var(--caramel);font-weight:300;margin-bottom:16px">Actualmente estoy enfocada en crear contenido para redes sociales y e-commerce, encargándome de todo el proceso: desde la idea hasta la edición final. Me interesa trabajar con marcas de belleza, cuidado capilar y lifestyle que valoren lo real sobre lo perfecto.</p>
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-num">8+</div>
+          <div class="stat-label">Videos por pack</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">5d</div>
+          <div class="stat-label">Entrega promedio</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">6</div>
+          <div class="stat-label">Nichos de contenido</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CONTACTO -->
 <section id="contacto">
-  <h2 id="contactoH2"></h2>
+  <h2>¿Colaboramos<br><span style="color:rgba(255,255,255,.7);font-style:italic;font-family:'Playfair Display',serif">juntos?</span></h2>
   <p>Estoy disponible para colaboraciones con marcas de belleza, salud y lifestyle. Escríbeme y hablamos de tu proyecto.</p>
-  <a class="contact-email" id="contactoEmail" href="#"></a>
-  <div class="social-links" id="socialLinks"></div>
+  <a class="contact-email" href="mailto:londonoluisa81@gmail.com">londonoluisa81@gmail.com</a>
+  <div class="social-links">
+    <a href="https://instagram.com/luisa_ln" target="_blank" rel="noopener noreferrer" class="social-link">📸 Instagram</a>
+    <a href="https://tiktok.com/@luisa_ln" target="_blank" rel="noopener noreferrer" class="social-link">🎵 TikTok</a>
+  </div>
 </section>
 
-<footer id="footerEl"></footer>
+<footer>© 2026 Luisa María · UGC Creator · Medellín, Colombia</footer>
 
 <!-- VIDEO MODAL -->
 <div class="modal-overlay" id="videoModal" role="dialog" aria-modal="true" aria-label="Reproducción de video">
@@ -158,6 +255,7 @@
 <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">↑</button>
 
 <script src="config.js"></script>
+<script src="photos-manifest.js"></script>
 <script src="main.js"></script>
 </body>
 </html>

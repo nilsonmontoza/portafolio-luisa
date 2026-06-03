@@ -469,6 +469,22 @@ h2 span { color: var(--terracotta); font-style: italic; }
 /* ── FOOTER ── */
 footer { background: var(--espresso); color: var(--blush); text-align: center; padding: 24px 40px; font-size: .78rem; font-weight: 300; letter-spacing: .06em; }
 
+/* ── BLUR-UP ── */
+img.blur-up {
+  filter: blur(10px);
+  opacity: 0;
+  transform: scale(1.04);
+  transition: filter .5s ease, opacity .5s ease, transform .5s ease;
+  will-change: filter, opacity, transform;
+}
+img.blur-up.loaded {
+  filter: blur(0);
+  opacity: 1;
+  transform: scale(1);
+}
+.hero-photo { background: var(--blush); }
+.photo-item { background: var(--sand); }
+
 /* ── SCROLL REVEAL ── */
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.visible { opacity: 1; transform: none; }
