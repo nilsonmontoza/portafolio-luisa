@@ -18,44 +18,42 @@ const CONFIG = {
   },
 
   // ── FOTOS ─────────────────────────────────────────────────
-  // archivo: ruta de la imagen  |  caption: texto que aparece debajo
+  // Solo necesitas el archivo. El caption sale del nombre del archivo.
+  // caption es opcional si quieres un texto distinto al nombre.
   fotos: [
-    { archivo: "fotos/productos/desmaquillante.jpg", caption: "Desmaquillante" },
-    { archivo: "fotos/productos/remington.jpg",      caption: "Remington" },
+    { archivo: "fotos/productos/desmaquillante.jpg" },
+    { archivo: "fotos/productos/remington.jpg" },
   ],
 
   // ── VIDEOS ────────────────────────────────────────────────
-  // archivo: ruta local  |  url: link externo  |  thumb: imagen de preview (opcional)
+  // titulo y categoria son obligatorios. archivo o url (no ambos).
+  // etiqueta es opcional — si se omite, usa el label de la categoría.
   videos: [
     {
-      titulo:   "Hair Style - Shark",
+      titulo:    "Hair Style - Shark",
       categoria: "hair",
-      etiqueta: "💇‍♀️ Capilar",
-      archivo:  "videos/capilar/hair-style.mp4",
+      archivo:   "videos/capilar/hair-style.mp4",
     },
     {
-      titulo:   "Unboxing Shark",
+      titulo:    "Unboxing Shark",
       categoria: "hair",
-      etiqueta: "🌿 Unboxing",
-      archivo:  "videos/capilar/unboxing.mp4",
+      etiqueta:  "🌿 Unboxing",
+      archivo:   "videos/capilar/unboxing.mp4",
     },
     {
-      titulo:   "Rutina noche Skincare",
+      titulo:    "Rutina noche Skincare",
       categoria: "skincare",
-      etiqueta: "✨ Skincare",
-      archivo:  "videos/skincare/skincare.mp4",
+      archivo:   "videos/skincare/skincare.mp4",
     },
     {
-      titulo:   "Day in My Life · Carmen",
+      titulo:    "Day in My Life · Carmen",
       categoria: "life",
-      etiqueta: "🌿 Lifestyle",
-      archivo:  "videos/lifestyle/carmen.mp4",
+      archivo:   "videos/lifestyle/carmen.mp4",
     },
     {
-      titulo:   "Keratin Therapy",
+      titulo:    "Keratin Therapy",
       categoria: "hair",
-      etiqueta: "💇‍♀️ Capilar",
-      archivo:  "videos/capilar/remington.mp4",
+      archivo:   "videos/capilar/remington.mp4",
     },
   ],
 

@@ -27,7 +27,7 @@ function buildVideoCard(v) {
     return `<div class="video-card has-video ${thumbClass(v.categoria)}" data-cat="${v.categoria}" data-archivo="${v.archivo}"${bgStyle}>
       <video data-src="${v.archivo}" playsinline webkit-playsinline preload="none" muted></video>
       <div class="video-inner"><div class="video-play-btn">▶</div></div>
-      <span class="video-cat-tag">${v.etiqueta}</span>
+      <span class="video-cat-tag">${v.etiqueta ?? CONFIG.categorias[v.categoria]}</span>
       <div class="video-label">${v.titulo}</div>
     </div>`;
   }
@@ -35,7 +35,7 @@ function buildVideoCard(v) {
   const clickAttr = v.url ? ` onclick="window.open(this.dataset.url,'_blank')" data-url="${v.url}"` : '';
   return `<div class="video-card ${thumbClass(v.categoria)}" data-cat="${v.categoria}"${bgStyle}${clickAttr}>
     <div class="video-inner"><div class="video-play-btn">▶</div></div>
-    <span class="video-cat-tag">${v.etiqueta}</span>
+    <span class="video-cat-tag">${v.etiqueta ?? CONFIG.categorias[v.categoria]}</span>
     <div class="video-label">${v.titulo}</div>
   </div>`;
 }
@@ -175,18 +175,25 @@ function photoPlaceholder(i) {
   return `<div class="photo-ph ${placeholderColors[i % 5]}"><span>foto-${i + 1}.jpg</span></div>`;
 }
 
+function toCaption(filename) {
+  return filename.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+
 if (CONFIG.fotos?.length) {
-  document.getElementById('photoGrid').innerHTML = CONFIG.fotos.map((f, i) => `
+  document.getElementById('photoGrid').innerHTML = CONFIG.fotos.map((f, i) => {
+    const caption = f.caption ?? toCaption(f.archivo.split('/').pop());
+    const captionAttr = caption.replace(/"/g, '&quot;');
+    return `
     <div class="photo-item"
         data-src="${f.archivo}"
-        data-caption="${f.caption.replace(/"/g, '&quot;')}"
+        data-caption="${captionAttr}"
         onclick="openLightbox(this.dataset.src, this.dataset.caption)">
-      <img src="${f.archivo}" alt="${f.caption}" loading="lazy"
+      <img src="${f.archivo}" alt="${caption}" loading="lazy"
            class="blur-up" onload="this.classList.add('loaded')"
            onerror="this.parentElement.innerHTML=photoPlaceholder(${i})">
-      <div class="photo-overlay"><div class="photo-caption">${f.caption}</div></div>
-    </div>`
-  ).join('');
+      <div class="photo-overlay"><div class="photo-caption">${caption}</div></div>
+    </div>`;
+  }).join('');
 }
 
 // ── LIGHTBOX ──────────────────────────────────────────────────
