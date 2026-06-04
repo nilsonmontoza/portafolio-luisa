@@ -34,7 +34,6 @@ There are no build, lint, or test commands.
 | `style.css` | All styles and CSS variables |
 | `config.js` | `categorias` + `videos` + `fotos` — **único archivo a editar para contenido** |
 | `main.js` | Renders videos and photos dynamically; handles all interactivity |
-| `scripts/generate-manifest.js` | Script legacy — ya no se usa |
 
 Load order at bottom of `<body>`: `config.js` → `main.js`.
 
