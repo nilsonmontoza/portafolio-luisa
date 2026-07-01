@@ -58,8 +58,15 @@ const CONFIG = {
     {
       titulo:    "Unboxing Atenea",
       categoria: "life",
-      archivo:   "videos/lifestyle/atenea.mp4",
+      url:       "https://www.tiktok.com/@luisa_ln/video/7644387932513504532?_r=1&_t=ZS-97g3tnx8rRc",
+      thumb:     "fotos/Atenea.jpeg"
     },
+    {
+      titulo:    "Unboxing Shein",
+      categoria: "life",
+      url:       "https://www.tiktok.com/@luisa_ln/video/7644735813510548757?_r=1&_t=ZS-97g3vqXO95g",
+      thumb:     "fotos/Shein.jpeg"
+    }
   ],
 
 };
