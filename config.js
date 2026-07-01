@@ -43,7 +43,7 @@ const CONFIG = {
     "Me llamo Luisa María, tengo 26 años y vivo en Medellín. Me apasiona crear contenido que se siente real y cercano. Me gusta mostrar los productos de forma natural, como en el día a día, porque sé que así es como realmente conectan con las personas.",
     "Actualmente estoy enfocada en crear contenido para redes sociales y e-commerce, encargándome de todo el proceso: desde la idea hasta la edición final. Me interesa trabajar con marcas de belleza, cuidado capilar y lifestyle que valoren lo real sobre lo perfecto.",
   ],
-
+  
   // ── HABILIDADES ───────────────────────────────────────────
   habilidades: [
     { icono: "🎬", titulo: "Creación UGC",         desc: "Contenido real y natural que conecta con las personas y genera confianza en la marca." },
@@ -72,7 +72,7 @@ const CONFIG = {
   //   - url: link externo (TikTok, YouTube, Drive) — usa esto si no quieres subir el archivo
   //   - thumb: imagen de preview (ej: "fotos/productos/thumb-skincare.jpg") — opcional
   // Para convertir video usa
-  // ffmpeg -i videos/skincare/skincare.MOV -vcodec h264 -acodec aac -strict -2 videos/skincare/skincare.mp4
+  // ffmpeg -i videos/atenea.MOV -vcodec h264 -acodec aac -strict -2 videos/lifestyle/atenea.mp4
   videos: [
     /*{
       titulo: "Review Skincare Rutina AM",
@@ -85,7 +85,7 @@ const CONFIG = {
     {
       titulo: "Hair Style - Shark",
       categoria: "hair",
-      etiqueta: "💇‍♀️ Capilar",
+      etiqueta: "Capilar",
       archivo: "videos/capilar/hair-style.mp4",
       url: "",
       thumb: "",
@@ -93,7 +93,7 @@ const CONFIG = {
     {
       titulo: "Unboxing Shark ",
       categoria: "hair",
-      etiqueta: "🌿 Unboxing",
+      etiqueta: "Unboxing",
       archivo: "videos/capilar/unboxing.mp4",
       url: "", 
       thumb: "",
@@ -101,24 +101,32 @@ const CONFIG = {
     {
       titulo: "Rutina noche Skincare",
       categoria: "skincare",
-      etiqueta: "✨ Skincare",
+      etiqueta: "Skincare",
       archivo: "videos/skincare/skincare.mp4",
       url: "", 
       thumb: "",
     },
     {
-      titulo: "Day in My Life · Medellín",
+      titulo: "Day in My Life · Carmen",
       categoria: "life",
-      etiqueta: "🌿 Lifestyle",
-      archivo: "videos/lifestyle/day-in-my-life.mp4",
+      etiqueta: "Lifestyle",
+      archivo: "videos/lifestyle/carmen.mp4",
       url: "",
       thumb: "",
     },
     {
       titulo: "Keratin Therapy",
       categoria: "hair",
-      etiqueta: "💇‍♀️ Capilar",
+      etiqueta: "Capilar",
       archivo: "videos/capilar/remington.mp4",
+      url: "",
+      thumb: "",
+    },
+    {
+      titulo: "Unboxing Atenea",
+      categoria: "life",
+      etiqueta: "Makeup",
+      archivo: "videos/lifestyle/atenea.mp4",
       url: "",
       thumb: "",
     }
@@ -128,18 +136,14 @@ const CONFIG = {
   // Pon tus fotos en: fotos/productos/
   // caption = texto que aparece al hacer hover
   fotos: [
-    { archivo: "fotos/productos/remington.jpeg", caption: "REMINGTON" },
-    { archivo: "fotos/productos/desmaquillante.jpeg", caption: "DESMAQUILLANTE BIFÁSICO" }
+    { archivo: "fotos/productos/remington.jpg", caption: "Remington" },
+    { archivo: "fotos/productos/desmaquillante.jpg", caption: "Desmaquillante Bifasico" }
   ],
 
   // ── SERVICIOS ─────────────────────────────────────────────
   servicios: [
-    { numero: "01", titulo: "Pack UGC Belleza",      desc: "2 videos auténticos para beauty: skincare, maquillaje o fragancias. Entrega en 5 días hábiles." },
-    { numero: "02", titulo: "Pack Cuidado Capilar",  desc: "3 videos sobre rutinas, tratamientos y reseñas de productos capilares." },
-    { numero: "03", titulo: "Pack Lifestyle & Vlogs", desc: "3 videos de vida diaria, comida o bienestar que integran tu producto de forma natural." },
-    { numero: "04", titulo: "Pack Completo UGC",     desc: "8 videos + fotos UGC (detalle y posando). Ideal para lanzamientos o campañas." },
-    { numero: "05", titulo: "Community Manager",     desc: "Gestión mensual de redes: estrategia, contenido, publicación, respuesta a comunidad y reportes." },
-    { numero: "06", titulo: "Foto UGC",              desc: "Set de fotos profesionales: detalle de producto, flatlay y tomas posando para e-commerce y redes." },
-  ],
-
+    { numero: "01", titulo: "Community Manager", desc: "Planeación y gestión de redes sociales, creación y programación de contenido, interacción con la comunidad y seguimiento de resultados para optimizar el rendimiento." },
+    { numero: "02", titulo: "Contenido UGC", desc: "Creación de contenido auténtico para marcas, incluyendo fotografías de producto, flatlays y videos pensados para e-commerce y redes sociales." },
+    { numero: "03", titulo: "Edicion de contenido", desc: "Grabación y edición de contenido para redes sociales, desarrollando piezas dinámicas con herramientas como Canva y CapCut." },
+  ]
 };
