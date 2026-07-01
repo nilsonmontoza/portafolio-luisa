@@ -55,6 +55,11 @@ const CONFIG = {
       categoria: "hair",
       archivo:   "videos/capilar/remington.mp4",
     },
+    {
+      titulo:    "Unboxing Atenea",
+      categoria: "life",
+      archivo:   "videos/lifestyle/atenea.mp4",
+    },
   ],
 
 };
